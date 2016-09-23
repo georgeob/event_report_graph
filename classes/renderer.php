@@ -77,9 +77,7 @@ class report_graphic_renderer extends plugin_renderer_base
     {
         $renderable = $this->renderable;
         $users = $renderable->get_users_list();
-        var_dump($users);
         $selecteduser="";
-
         echo html_writer::start_tag('form', array('class' => 'logselecform', 'action' => 'course.php', 'method' => 'get'));
         echo html_writer::start_div();
         echo html_writer::label('Select from enrolled users', false);

@@ -41,10 +41,9 @@ $PAGE->set_title(get_string('pluginname', 'report_graphic'));
 $PAGE->set_heading(get_string('pluginname', 'report_graphic'));
 $PAGE->set_pagelayout('report');
 echo $OUTPUT->header();
-var_dump((int)$course->id);
 $renderable = new report_graphic_renderable((int)$course->id);
 $renderer = $PAGE->get_renderer('report_graphic');
 echo $renderer->render($renderable);
+$renderable->get_users_list();
 echo $renderer->report_generate_charts();
-
 echo $OUTPUT->footer();

@@ -82,7 +82,6 @@ class report_graphic_renderable implements renderable
     public function get_course_list()
     {
         global $DB;
-
         $courses = array();
         $sitecontext = context_system::instance();
         // First check to see if we can override showcourses and showusers.
@@ -123,7 +122,6 @@ class report_graphic_renderable implements renderable
               ORDER BY id";
         $result = $DB->get_records_sql($sql);
         $counter = 1;
-        var_dump($result);
         foreach ($result as $id => $username) {
             $users[$counter] = ($username->firstname . ' ' . $username->lastname);
             $counter++;
